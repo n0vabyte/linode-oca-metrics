@@ -1,0 +1,11 @@
+[Unit]
+Description=Node Exporter
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=prometheus
+ExecStart=/usr/local/bin/node_exporter --web.listen-address="localhost:9100" --collector.textfile.directory=/etc/node_exporter.d/
+
+[Install]
+WantedBy=default.target
