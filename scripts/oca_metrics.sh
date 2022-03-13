@@ -63,7 +63,7 @@ Usage: $0 [pull_oca|get_metrics]
 Custom textfile script to scrape OCA metrics
 
    - pull_oca		pulls all OCA IDs from API endpoint and writes to $outfile
-   - get_metrics	pulls stats for individual OCA that were written to $outfile
+   - get_metrics	pulls stats for individual OCAs that were written to $outfile
 
 Examples:
    $0 pull_oca

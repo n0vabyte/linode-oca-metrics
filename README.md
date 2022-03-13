@@ -1,5 +1,5 @@
 # Linode OCA Monitoring Dashboard
-Montior Linode's one-click marketplace applications with Prometheus and Grafana. This small project was created to provide high-level insight on OCA deployment.
+Montior Linode's one-click marketplace applications with Prometheus and Grafana. This small project was created to provide high-level insight on OCA deployments.
 
 
 # How it works
@@ -77,4 +77,4 @@ Pretty simple and straightforward - You're done!
 
 ![](/images/dashboard_preview1.png)
 
-One thing you will notice is that the `OCA Trend` panel will not have any data because the `Min step` is set to 30 minutes. You will need to wait at least 24 hours to have at least 48 data points or remove the `Min step` by editing the panel.
+One thing you will notice is that the `OCA Trend` panel will not have any data because the `Min step` is set to 30 minutes and you've just started collecting data. You will need to wait at least 24 hours to have at least 48 data points or remove the `Min step` by editing the panel.
