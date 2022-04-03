@@ -71,6 +71,24 @@ Examples:
 EOF
 }
 
+function api_check {
+        # Internal errors are shown as 502s
+        log_file="api_error.log"
+        api_status=$(curl -s -o /dev/null -Iw "%{http_code}" "https://api.linode.com/v4/linode/stackscripts/")
+        if [ $api_status -eq 502 ]; then
+                cat << EOF >> $log_file
+============================================================
+Date: $(date)
+
+[CRIT] We've encountered an error reaching the API endpoint.
+Exiting to avoid overwritting current metrics
+==============================================================
+
+EOF
+        exit 1
+        fi
+}
+
 function main {
 	arg=$1
 	case $arg in
@@ -85,4 +103,5 @@ function main {
 			usage
 	esac
 }
+api_check
 main $1
